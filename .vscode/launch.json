@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Redis WebApp",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildWebApp",
+            "program": "${workspaceFolder}/WebApp/bin/Debug/net5.0/WebApp.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/WebApp",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "Redis ConsoleApp",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildConsoleApp",
+            "program": "${workspaceFolder}/ConsoleApp/bin/Debug/net5.0/ConsoleApp.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ConsoleApp",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }
+    ]
+}
